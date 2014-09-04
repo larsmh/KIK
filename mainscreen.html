@@ -1,15 +1,22 @@
 <!DOCTYPE>
 <html>
     <head>
-    	<script type="text/javascrit" src="code.js">
-		</script>
+    	<script type="text/javascript" src="js/mainscreen.js"></script>
     </head>
-    <h1>Insider renhold og miljo AS</h1>
-    <div style="width:100%; height:100%">
+    <body>
+    <h1>Insider renhold og miljø AS</h1>
+    <form name="registerForm" style="width:100%;">
         <label>Finn kunde:</label>		
         <br>
-        <input name="customersearch" type="text" id="customersearch" size="25"><br>
-        <p>
-        <input type="button" onclick="sendEmail" value="Registrer vask">
-        </p>    
-    </div>
+        <input list="customerlist">
+        <datalist id="customerlist">
+        <script>
+		displayList();
+		</script>
+        </datalist>
+        <br>
+        <input type="button" onclick="sendEmail()" value="Registrer vask">  
+    </form>
+    </body>
+</html>
+   
