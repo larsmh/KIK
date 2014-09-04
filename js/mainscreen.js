@@ -1,14 +1,29 @@
 var customerList;
 
 function sendEmail(){
-	
+	var name = document.getElementById("customer").value;
+	var sent = false;
+	for(i=0; i<customerList.list.length; i++){
+		if(name==customerList.list[i].name){
+			sendToThisEmail(customerList.list[i].email);
+			sent=true;
+			break;
+		}
+	}
+	if(!sent)
+		alert("Vennligst velg en gyldig kunde");
+}
+
+function sendToThisEmail(email){
+	alert("En epost har blitt sendt til "+email);
+	//code for sending email to parameter address
 }
 
 function displayList(){;
     var info = '';
 	customerList = new CustomerList();
 	for(i=0; i<customerList.list.length; i++){
-		info+='<option value='+customerList.list[i].name+'> ';
+		info+='<option value='+customerList.list[i].name+' id='+i+'> ';
 	}
     	
     document.getElementById("customerlist").innerHTML += info;
