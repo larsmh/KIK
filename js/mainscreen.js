@@ -46,23 +46,18 @@ CustomerList.prototype.getCustomers = function(){
 	var name;
 	var email;
 	//For testing purposes
-	var names = ["nils", "per", "ola"]
-	var emails =["mail1@mail.com", "per@mail.com", "ola@mail.com"]
+	var names = ["Rema 1000", "Statoil", "Bunnpris", "Jernia", "Bohus", "Bouvet"];
+	var emails =["rema1000@mail.com", "statoil@mail.com", "bunnpris@mail.com", "jernia@mail.com", "bohus@mail.com", "Bouvet@mail.com"];
 	for(i=0; i<names.length; i++){
 		name = names[i];
 		email = emails[i];
 		customer = new Customer(name, email);
 		this.list[this.list.length] = customer;
 	}
-	/*real code
-	do query
-	while(next){
-		name=query
-		email=query
-		customer = new Customer(name, email);
-		this.list[this.list.length] = customer;
-	}
-	*/
+	/*
+	$.getJSON('database.php', function(data){
+		createList(data);
+	});*/
 }
 
 /*	==================
