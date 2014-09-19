@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
+    	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.js"></script>
+        <link rel="stylesheet" href="css/jquery-ui.css">
     	<script type="text/javascript" src="js/mainscreen.js"></script>
+        <script>displayList();</script>
     </head>
     <body>
     <h1>Kontroll Insider Kunde</h1>
     <form name="registerForm" style="width:100%;">
+        <div class="ui-widget">
         <label>Finn kunde:</label>		
         <br>
-        <input list="customerlist" type="text" id="customer">
-        <datalist id="customerlist">
-        <script>
-		displayList();
-		</script>
-        </datalist>
+        <input type="text" id="customerlist">
         <br>
         <input type="button" onclick="sendEmail()" value="Registrer vask">  
+        </div>
     </form>
     </body>
 </html>

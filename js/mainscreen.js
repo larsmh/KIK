@@ -1,7 +1,7 @@
 var customerList;
 
 function sendEmail(){
-	var name = document.getElementById("customer").value;
+	var name = document.getElementById("customerlist").value;
 	var sent = false;
 	for(i=0; i<customerList.list.length; i++){
 		if(name==customerList.list[i].name){
@@ -20,13 +20,13 @@ function sendToThisEmail(email){
 }
 
 function displayList(){;
-    var info = '';
 	customerList = new CustomerList();
-	for(i=0; i<customerList.list.length; i++){
-		info+='<option value='+customerList.list[i].name+' id='+i+'> ';
-	}
+	var list =["per", "paa", "espen"];
+	$(function(){
+	$("#customerlist").autocomplete({source: customerList.list});
+	});
     	
-    document.getElementById("customerlist").innerHTML += info;
+    //document.getElementById("customerlist").innerHTML += info;
 }
 
 function chooseCustomer(){
@@ -52,13 +52,14 @@ CustomerList.prototype.getCustomers = function(){
 		name = names[i];
 		email = emails[i];
 		customer = new Customer(name, email);
-		this.list[this.list.length] = customer;
+		this.list[this.list.length] = name;
 	}
 	/*
 	$.getJSON('database.php', function(data){
 		createList(data);
 	});*/
 }
+
 
 /*	==================
 	Customer class
